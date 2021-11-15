@@ -122,6 +122,10 @@ body {
     cursor: pointer;
 }
 
+.portfolio-inner>a {
+    text-decoration: none;
+}
+
 .portfolio-img {
     width: 100%;
     border-radius: 5px;
