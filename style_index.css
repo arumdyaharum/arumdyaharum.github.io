@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+body {
+    width: 100vw;
+    font-family: roboto;
+    overflow-x: hidden;
+}
+header {
+    position: fixed;
+    top: 0;
+    background: rgb(11,53,78);
+    background: linear-gradient(45deg, rgba(11,53,78,1) 0%, rgba(60,146,196,1) 100%);
+    width: 100vw;
+    height: 50px;
+    padding: 10px 20px;
+}
+header .container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    text-decoration: none;
+    color: rgb(143, 197, 241);
+}
+header ul {
+    list-style: none;
+}
+header li {
+    display: inline-block;
+}
+header ul a {
+    padding: 10px 10px;
+}
+
+main {
+    background: rgb(60,146,196);
+    background: linear-gradient(45deg, rgba(60,146,196,1) 0%, rgba(11,53,78,1) 100%);
+    color: rgb(166, 215, 255);
+    padding-top: 50px;
+}
+
+main #home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#home .text {
+    line-height: 30px;
+    text-align: center;
+}
+#home .text h1 {
+    color: white;
+    line-height: 60px;
+    font-size: 50px;
+}
+#home .text h2 {
+    line-height: 40px;
+    font-size: 30px;
+    color: rgb(143, 197, 241);
+}
+
+main #profile {
+    height: 100vh;
+    padding: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+#profile .img-profile {
+    margin-right: 50px;
+    margin-left: 25px;
+}
+#profile .img-profile img {
+    border-radius: 50%;
+    width: 250px;
+}
+#profile .bio-profile h1{
+    color: white;
+    margin-bottom: 10px;
+}
+#profile .bio-profile p {
+    line-height: 25px;
+}
+#profile .bio-profile a {
+    width: 100%;
+    background-color: rgb(11,53,78);
+    color: rgb(143, 197, 241);
+    font-weight: 700;
+    padding: 15px 20px;
+    line-height: 55px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+main #contact {
+    height: 100vh;
+    padding: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#contact .container {
+    text-align: center;
+}
+#contact h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+#contact input, #contact textarea {
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 10px;
+    background: rgb(143, 197, 241);
+    color: rgb(11,53,78);
+}
+#contact #firstname {
+    margin-right: 5px;
+}
+#contact #email, #contact #subject, #contact #message {
+    width: 100%;
+}
+#contact button {
+    width: 100%;
+    background-color: rgb(11,53,78);
+    color: rgb(143, 197, 241);
+    font-weight: 700;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(11,53,78);
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(11,53,78);
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(11,53,78);
+}
+
+main #footer {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    
+    #home .text h1 {
+        font-size: 35px;
+    }
+    #home .text h2 {
+        font-size: 25px;
+    }
+    #profile .container {
+        display: block;
+        margin: 0 15px;
+    }
+    #profile .img-profile {
+        display: flex;
+        justify-content: center;
+        margin: 0 0 40px 0;
+    }
+    #profile .img-profile img {
+        width: 200px;
+    }
+    #profile .bio-profile {
+        text-align: center;
+    }
+    main #contact {
+        margin: 0 15px;
+    }
+    #contact #firstname, #contact #lastname {
+        width: 100%;
+    }
+}
