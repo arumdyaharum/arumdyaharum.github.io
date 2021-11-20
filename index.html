@@ -45,17 +45,20 @@
     <section id="contact">
       <div class="container">
         <h1>Contact Me</h1>
-        <form action="" method="post">
           <input type="text" placeholder="First Name" name="firstname" id="firstname">
           <input type="text" placeholder="Last Name" name="lastname" id="lastname"> <br>
           <input type="email" placeholder="Email" name="email" id="email"> <br>
           <input type="text" placeholder="Subject" name="subject" id="subject"> <br>
           <textarea name="message" id="message" rows="7" placeholder="Write your message here!"></textarea> <br>
-          <button>Send</button>
-        </form>
+          <button onclick="sendIt()">Send</button>
       </div>
     </section>
     <section id="footer">&copy; 2021 - Dyah Achwatiningrum</section>
   </main>
+  <script>
+    function sendIt() {
+      alert("Thank you for writing a message but unfortunately you can't send it.");
+    }
+  </script>
 </body>
 </html>
