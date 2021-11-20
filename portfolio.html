@@ -32,56 +32,14 @@
                 </section>
 
                 <!-- Portfolio Item -->
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-12">
+                <div class="row" id="projectsList">
+                    <div class="col-md-4 col-sm-6 col-12" id="project">
                         <div class="portfolio-inner">
-                            <a href="https://github.com/arumdyaharum/arumdyaharum.github.io">
-                                <img src="img/2021_onePage.png" draggable="false" alt="Portfolio Item" class="portfolio-img">
+                            <a href="https://github.com/arumdyaharum/arumdyaharum.github.io" id="link">
+                                <img src="img/2021_onePage.png" id="img" draggable="false" alt="Portfolio Item" class="portfolio-img">
                                 <div class="portfolio-info">
-                                    <p class="portfolio-name">One Page Website</p>
-                                    <p class="portfolio-type">Dyah Achwatiningrum</p>
-                                    <span class="portfolio-arrow">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="portfolio-inner">
-                            <a href="https://github.com/arumdyaharum/linktree">
-                                <img src="img/2021_linktree.png" draggable="false" alt="Portfolio Item" class="portfolio-img">
-                                <div class="portfolio-info">
-                                    <p class="portfolio-name">Linktree Website</p>
-                                    <p class="portfolio-type">Dyah Achwatiningrum</p>
-                                    <span class="portfolio-arrow">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="portfolio-inner">
-                            <a href="https://github.com/arumdyaharum/FeM_orderSummary">
-                                <img src="img/2021_orderSummary.png" draggable="false" alt="Portfolio Item" class="portfolio-img">
-                                <div class="portfolio-info">
-                                    <p class="portfolio-name">Order Summary Component</p>
-                                    <p class="portfolio-type">Front-End Mentor</p>
-                                    <span class="portfolio-arrow">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-12">
-                        <div class="portfolio-inner">
-                            <a href="https://github.com/arumdyaharum/FeM_faqAccordion">
-                                <img src="img/2021_faqAccordion.png" draggable="false" alt="Portfolio Item" class="portfolio-img">
-                                <div class="portfolio-info">
-                                    <p class="portfolio-name">FAQ Accordion</p>
-                                    <p class="portfolio-type">Front-End Mentor</p>
+                                    <p class="portfolio-name" id="name">One Page Website</p>
+                                    <p class="portfolio-type" id="type">Dyah Achwatiningrum</p>
                                     <span class="portfolio-arrow">
                                         <i class="fas fa-arrow-right"></i>
                                     </span>
@@ -98,5 +56,53 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        const projects = [
+            {
+                name: 'One Page Website',
+                type: 'Dyah Achwatiningrum',
+                img: 'img/2021_onePage.png',
+                link: 'https://github.com/arumdyaharum/arumdyaharum.github.io'
+            },
+            {
+                name: 'Linktree Website',
+                type: 'Dyah Achwatiningrum',
+                img: 'img/2021_linktree.png',
+                link: 'https://github.com/arumdyaharum/linktree'
+            },
+            {
+                name: 'Order Summary Component',
+                type: 'Front-End Mentor',
+                img: 'img/2021_orderSummary.png',
+                link: 'https://github.com/arumdyaharum/FeM_orderSummary'
+            },
+            {
+                name: 'FAQ Accordion',
+                type: 'Front-End Mentor',
+                img: 'img/2021_faqAccordion.png',
+                link: 'https://github.com/arumdyaharum/FeM_faqAccordion'
+            }
+        ];
+        generatePortfolio(projects);
+        function generatePortfolio(projects) {
+            const container = document.getElementById('projectsList');
+            const card = document.getElementById('project');
+            card.remove();
+            for(const list of projects) {
+                const cln = card.cloneNode(true);
+                const link = cln.querySelector('#link');
+                const img = cln.querySelector('#img');
+                const name = cln.querySelector('#name');
+                const type = cln.querySelector('#type');
+
+                link.href = list.link;
+                img.src = list.img;
+                name.innerHTML = list.name;
+                type.innerHTML = list.type;
+
+                container.appendChild(cln);
+            }
+        }
+    </script>
 </body>
 </html>
